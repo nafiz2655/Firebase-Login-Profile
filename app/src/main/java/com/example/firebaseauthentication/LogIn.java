@@ -3,6 +3,7 @@ package com.example.firebaseauthentication;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
@@ -12,6 +13,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,6 +46,11 @@ public class LogIn extends AppCompatActivity {
     public static String TAG = "RequesError";
     ImageView hight_pass;
 
+    public static SharedPreferences sharedPreferences;
+    public static SharedPreferences.Editor editor;
+
+    ScrollView lagin_layout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,11 +62,30 @@ public class LogIn extends AppCompatActivity {
         lottieAnimationView = findViewById(R.id.animationView);
         log_in = findViewById(R.id.log_in);
         register = findViewById(R.id.register);
-
         hight_pass = findViewById( R.id.hight_pass);
-
+        lagin_layout = findViewById(R.id.lagin_layout);
 
         firebaseAuth = FirebaseAuth.getInstance();
+
+        sharedPreferences = getSharedPreferences(getString(R.string.app_name),MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+
+
+
+        String loncherdata = sharedPreferences.getString("checkverify","DefultValue");
+
+
+        if (loncherdata.contains("verified")){
+            lagin_layout.setVisibility(View.GONE);
+            Toast.makeText(this, "all rady log in", Toast.LENGTH_SHORT).show();
+            startActivity( new Intent(LogIn.this,UsureprofileAcitvity.class));
+
+        }else {
+            Toast.makeText(this, "Log In now", Toast.LENGTH_SHORT).show();
+            lagin_layout.setVisibility(View.VISIBLE);
+
+        }
+
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,6 +148,9 @@ public class LogIn extends AppCompatActivity {
 
                     if (firebaseUser.isEmailVerified()){
                         Toast.makeText(LogIn.this, "Log In success Full", Toast.LENGTH_SHORT).show();
+                        editor.putString("checkverify","verified");
+                        editor.apply();
+                        startActivity( new Intent(LogIn.this,UsureprofileAcitvity.class));
 
                     }else {
                         firebaseUser.sendEmailVerification();
@@ -188,17 +217,5 @@ public class LogIn extends AppCompatActivity {
                 .show();
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
 
-        if (firebaseAuth.getCurrentUser() != null){
-            Toast.makeText(this, "all rady log in ", Toast.LENGTH_SHORT).show();
-
-            startActivity( new Intent(LogIn.this,UsureprofileAcitvity.class));
-
-        }else {
-            Toast.makeText(this, "Log In now", Toast.LENGTH_SHORT).show();
-        }
-    }
 }

@@ -70,9 +70,6 @@
             android:layout_marginLeft="15dp"
             android:hint="Type Your Email"
             android:inputType="textEmailAddress"
-            android:text="nafiz2755@gmail.com"
-
-
             />
 
         <TextView
@@ -86,6 +83,11 @@
             android:textStyle="normal"
             android:layout_marginTop="15dp"
             />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
         <EditText
             android:id="@+id/password"
             android:layout_width="match_parent"
@@ -102,269 +104,19 @@
             android:layout_marginLeft="15dp"
             android:hint="Type Your Password"
             android:inputType="textPassword"
-            android:text="s5S12#dd"
             />
+    <ImageView
+        android:id="@+id/hight_pass"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/hide"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:paddingRight="10dp"
 
+        />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:fontFamily="@font/font1"
-            android:textColor="@color/black"
-            android:text="Continue Password"
-            android:textStyle="normal"
-            android:layout_marginTop="15dp"
-            />
-        <EditText
-            android:id="@+id/con_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bottom_shade"
-            android:textStyle="normal"
-            android:textSize="22dp"
-            android:fontFamily="@font/font1"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="15dp"
-            android:hint="Type Your Password again"
-            android:inputType="textPassword"
-            android:text="s5S12#dd"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:textColor="@color/black"
-            android:text="Nick Name"
-            android:textStyle="normal"
-            android:fontFamily="@font/font1"
-            android:layout_marginTop="10dp"
-            />
-        <EditText
-            android:id="@+id/name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bottom_shade"
-            android:textStyle="normal"
-            android:textSize="22dp"
-            android:fontFamily="@font/font1"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="15dp"
-            android:hint="Type Your name"
-            android:inputType="text"
-            android:text="Nafiz Ahmed"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:textColor="@color/black"
-            android:text="Address"
-            android:textStyle="normal"
-            android:fontFamily="@font/font1"
-            android:layout_marginTop="5dp"
-            />
-        <EditText
-            android:id="@+id/address"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bottom_shade"
-            android:textStyle="normal"
-            android:textSize="22dp"
-            android:fontFamily="@font/font1"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="15dp"
-            android:hint="Type Your address"
-            android:inputType="textMultiLine"
-            android:text="Dhaka"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:textColor="@color/black"
-            android:text="Phone"
-            android:textStyle="normal"
-            android:fontFamily="@font/font1"
-            android:layout_marginTop="5dp"
-            />
-        <EditText
-            android:id="@+id/phone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bottom_shade"
-            android:textStyle="normal"
-            android:textSize="22dp"
-            android:fontFamily="@font/font1"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="15dp"
-            android:hint="Type Your Phone"
-            android:inputType="textMultiLine"
-            android:text="01615419931"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:textColor="@color/black"
-            android:text="Age"
-            android:textStyle="normal"
-            android:fontFamily="@font/font1"
-            android:layout_marginTop="5dp"
-            />
-        <EditText
-            android:id="@+id/age"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bottom_shade"
-            android:textStyle="normal"
-            android:textSize="22dp"
-            android:fontFamily="@font/font1"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="15dp"
-            android:hint="Type Your Phone"
-            android:inputType="textMultiLine"
-            android:text="20"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:textColor="@color/black"
-            android:text="Gender"
-            android:textStyle="normal"
-            android:fontFamily="@font/font1"
-            android:layout_marginTop="5dp"
-            />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="15dp"
-
-            >
-
-            <RadioGroup
-                android:id="@+id/gender_groop"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/bottom_shade"
-                android:paddingTop="7dp"
-                android:paddingBottom="7dp"
-                android:paddingLeft="5dp"
-                >
-
-                <RadioButton
-                    android:id="@+id/radio_male"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Male"
-                    android:textSize="16dp"
-                    />
-
-                <RadioButton
-                    android:id="@+id/radio_female"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Female"
-                    android:textSize="16dp"
-                    />
-
-            </RadioGroup>
-
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:textColor="@color/black"
-            android:text="Date Off Birth"
-            android:textStyle="normal"
-            android:fontFamily="@font/font1"
-            android:layout_marginTop="5dp"
-            />
-        <EditText
-            android:id="@+id/birthday"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bottom_shade"
-            android:textStyle="normal"
-            android:textSize="22dp"
-            android:fontFamily="@font/font1"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="15dp"
-            android:hint="Type Your Phone"
-            android:inputType="textMultiLine"
-            android:text="11/12/2002"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:textColor="@color/black"
-            android:text="About Yourself"
-            android:textStyle="normal"
-            android:fontFamily="@font/font1"
-            android:layout_marginTop="5dp"
-            />
-        <EditText
-            android:id="@+id/yoursalf"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bottom_shade"
-            android:textStyle="normal"
-            android:textSize="22dp"
-            android:fontFamily="@font/font1"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="15dp"
-            android:hint="Type Your Phone"
-            android:inputType="textMultiLine"
-            android:text="11/12/2002"
-            />
-
-
-
-
-
-
+</RelativeLayout>
 
         <LinearLayout
             android:id="@+id/checkbox_lay"
@@ -384,15 +136,15 @@
                 >
 
 
-               <TextView
-                   android:id="@+id/one_number"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:text="· One number"
-                   android:textSize="12dp"
-                   android:paddingTop="3dp"
-                   android:paddingBottom="3dp"
-                   />
+                <TextView
+                    android:id="@+id/one_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="· One number"
+                    android:textSize="12dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    />
 
                 <TextView
                     android:id="@+id/lowercase"
@@ -460,48 +212,292 @@
         </LinearLayout>
 
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:fontFamily="@font/font1"
+            android:textColor="@color/black"
+            android:text="Continue Password"
+            android:textStyle="normal"
+            android:layout_marginTop="15dp"
+            />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <EditText
+            android:id="@+id/con_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bottom_shade"
+            android:textStyle="normal"
+            android:textSize="22dp"
+            android:fontFamily="@font/font1"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:hint="Type Your Password again"
+            android:inputType="textPassword"
+            />
+
+    <ImageView
+        android:id="@+id/hight_con_pass"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/hide"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:paddingRight="10dp"
+
+        />
+
+</RelativeLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:textColor="#88000000"
-            android:text="Forget Password?"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:text="Nick Name"
             android:textStyle="normal"
-            android:layout_marginTop="15dp"
-            android:gravity="right"
             android:fontFamily="@font/font1"
+            android:layout_marginTop="10dp"
+            />
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bottom_shade"
+            android:textStyle="normal"
+            android:textSize="22dp"
+            android:fontFamily="@font/font1"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:hint="Type Your Nick Name"
+            android:inputType="text"
+            />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:text="Address"
+            android:textStyle="normal"
+            android:fontFamily="@font/font1"
+            android:layout_marginTop="5dp"
+            />
+        <EditText
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bottom_shade"
+            android:textStyle="normal"
+            android:textSize="22dp"
+            android:fontFamily="@font/font1"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:hint="Type Your address"
+            android:inputType="textMultiLine"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:text="Phone"
+            android:textStyle="normal"
+            android:fontFamily="@font/font1"
+            android:layout_marginTop="5dp"
+            />
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bottom_shade"
+            android:textStyle="normal"
+            android:textSize="22dp"
+            android:fontFamily="@font/font1"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:hint="Type Your Phone"
+            android:inputType="numberDecimal"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:text="Age"
+            android:textStyle="normal"
+            android:fontFamily="@font/font1"
+            android:layout_marginTop="5dp"
+            />
+        <EditText
+            android:id="@+id/age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bottom_shade"
+            android:textStyle="normal"
+            android:textSize="22dp"
+            android:fontFamily="@font/font1"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:hint="Type Your Age"
+            android:inputType="numberDecimal"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:text="Gender"
+            android:textStyle="normal"
+            android:fontFamily="@font/font1"
+            android:layout_marginTop="5dp"
             />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginTop="7dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:textColor="#AB000000"
-                android:text="read a "
-                android:textStyle="normal"
-                android:fontFamily="@font/font1"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:textColor="#2196F3"
-                android:text="private polic"
-                android:textStyle="normal"
-                android:fontFamily="@font/font1"
-                />
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
 
+            >
+
+            <RadioGroup
+                android:id="@+id/gender_groop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/bottom_shade"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:paddingLeft="5dp"
+                >
+
+                <RadioButton
+                    android:id="@+id/radio_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/font1"
+                    />
+
+                <RadioButton
+                    android:id="@+id/radio_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/font1"
+                    />
+
+            </RadioGroup>
 
         </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:text="Date Off Birth"
+            android:textStyle="normal"
+            android:fontFamily="@font/font1"
+            android:layout_marginTop="5dp"
+            />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <EditText
+            android:id="@+id/birthday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bottom_shade"
+            android:textStyle="normal"
+            android:textSize="22dp"
+            android:fontFamily="@font/font1"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:hint="Type Your Birthday"
+            android:inputType="numberDecimal"
+            />
+        <ImageView
+            android:id="@+id/calender"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/calendar"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="10dp"
+
+    />
+
+</RelativeLayout>
+
+
+<TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:text="About Yourself"
+            android:textStyle="normal"
+            android:fontFamily="@font/font1"
+            android:layout_marginTop="5dp"
+            />
+        <EditText
+            android:id="@+id/yoursalf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bottom_shade"
+            android:textStyle="normal"
+            android:textSize="22dp"
+            android:fontFamily="@font/font1"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:hint="Type something yourself"
+            android:inputType="textMultiLine"
+            />
+
 
 
         <TextView
@@ -518,6 +514,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="25dp"
             android:fontFamily="@font/font1"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
             />
 
 
@@ -525,45 +523,6 @@
 
     </LinearLayout>
 
-
-
-    <TextView
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Or Sign Up Using"
-        android:gravity="center"
-        android:textSize="15dp"
-
-        />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="5dp"
-            android:src="@drawable/googl" />
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="5dp"
-            android:src="@drawable/facebook" />
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="5dp"
-            android:src="@drawable/twitter" />
-
-
-    </LinearLayout>
 
     </LinearLayout>
     </ScrollView>

@@ -1,25 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UsureprofileAcitvity"
+    android:id="@+id/drawerLayout"
+    tools:openDrawer="start"
     >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
 
+        >
+
+
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/threeline"
+            android:padding="10dp"
+            android:layout_marginLeft="15dp"
+            />
 
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/menu"
         >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="10dp"
             android:padding="15dp">
 
             <TextView
@@ -50,7 +67,7 @@
                         android:layout_width="100dp"
                         android:id="@+id/profile"
                         android:layout_height="100dp"
-                        android:src="@drawable/hide"
+                        android:src="@drawable/nafiz"
                         android:layout_weight="1"
                         app:civ_border_width="2dp"
                         app:civ_border_color="#FF000000"
@@ -140,14 +157,16 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
-                        android:layout_marginTop="15dp">
+                        android:layout_marginTop="15dp"
+                        android:visibility="gone"
+                        >
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
                             android:fontFamily="@font/font1"
-                            android:text="Usure Name"
+                            android:text="Nick Name"
                             android:textColor="@color/black"
                             android:textSize="15sp"
                             android:textStyle="bold" />
@@ -244,7 +263,32 @@
                             android:layout_alignParentEnd="true"
                             android:textStyle="bold"/>
                     </RelativeLayout>
-
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text="address"
+                            android:fontFamily="@font/font1"
+                            android:textSize="15sp"
+                            android:layout_alignParentStart="true"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:id="@+id/tv_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#6E6C6C"
+                            android:text=""
+                            android:fontFamily="@font/font1"
+                            android:textSize="15sp"
+                            android:layout_alignParentEnd="true"
+                            android:textStyle="bold"/>
+                    </RelativeLayout>
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -272,32 +316,7 @@
                             android:textStyle="bold"/>
                     </RelativeLayout>
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/black"
-                            android:text="Email"
-                            android:fontFamily="@font/font1"
-                            android:textSize="15sp"
-                            android:layout_alignParentStart="true"
-                            android:textStyle="bold"/>
-                        <TextView
-                            android:id="@+id/tv_address"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="#6E6C6C"
-                            android:text=""
-                            android:fontFamily="@font/font1"
-                            android:textSize="15sp"
-                            android:layout_alignParentEnd="true"
-                            android:textStyle="bold"/>
-                    </RelativeLayout>
+
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -350,6 +369,7 @@
                         android:textStyle="bold"/>
 
                     <TextView
+                        android:id="@+id/tv_about"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
@@ -439,7 +459,22 @@
         android:visibility="gone"
         app:lottie_loop="true"/>
 
+    </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:menu="@menu/common_menu"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header_layout"
+        android:background="#FFFFFF"
+        android:layout_marginTop="55dp"
+        />
 
 
 
-</RelativeLayout>
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,16 +1,21 @@
 package com.example.firebaseauthentication;
 
 import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -33,6 +38,11 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.time.Month;
+import java.time.Year;
+import java.util.Calendar;
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -53,6 +63,10 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "RegisterActivity";
 
+    ImageView hight_con_pass,hight_pass,calender;
+
+    DatePickerDialog picker;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -67,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
         rediogroopRegisterGendr.clearCheck();
         radio_male = findViewById(R.id.radio_male);
         radio_female = findViewById(R.id.radio_female);
+        hight_con_pass = findViewById(R.id.hight_con_pass);
+        hight_pass = findViewById(R.id.hight_pass);
+        calender = findViewById(R.id.calender);
 
 
         email = findViewById(R.id.email);
@@ -127,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
                 // s, the text has been changed.
 
                 checkbox_lay.setVisibility(View.VISIBLE);
+                password.setBackgroundResource(R.drawable.bottom_shade);
 
                 if (charSequence.length()==0){
                     password.setBackgroundResource(R.drawable.error);
@@ -190,8 +208,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        /*
-        //confirm passwoed check
         con_password.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -200,13 +216,15 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                String p = password.getText().toString();
-                String ss = (String) s;
-                if (ss.contains(p)){
+                String pass = password.getText().toString();
+                String con_p = password.getText().toString();
+                if (con_p.contains(pass)){
                     con_password.setBackgroundResource(R.drawable.bottom_shade);
+                    con_pass=1;
+
                 }else {
                     con_password.setBackgroundResource(R.drawable.error);
-
+                    con_pass=0;
                 }
 
             }
@@ -217,7 +235,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-         */
+        hight_pass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (password.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
+                    password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    hight_pass.setImageResource(R.drawable.hide);
+                }else {
+                    password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    hight_pass.setImageResource(R.drawable.view);
+                }
+            }
+        });
+
+        hight_con_pass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (con_password.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
+                    con_password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    hight_con_pass.setImageResource(R.drawable.hide);
+                }else {
+                    con_password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    hight_con_pass.setImageResource(R.drawable.view);
+                }
+            }
+        });
 
 
 
@@ -233,6 +275,86 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 rediogroopRegisterGendr.setBackgroundResource(R.drawable.bottom_shade);
+            }
+        });
+
+        calender.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Calendar calendar = Calendar.getInstance();
+                int date = calendar.get(calendar.DAY_OF_MONTH);
+                int manth = calendar.get(calendar.MONTH);
+                int year = calendar.get(calendar.YEAR);
+
+                DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                                String s_day = String.valueOf(dayOfMonth);
+                                int i = month+1;
+                                String s_manth = String.valueOf(i);
+                                String s_year = String.valueOf(year);
+
+                                if (s_day.length()==1){
+                                    s_day="0"+s_day;
+                                }
+                                if (s_manth.length()==1){
+                                    s_manth = "0"+s_manth;
+                                }
+
+                                birthday.setText(s_day+"/"+s_manth+"/"+year);
+
+
+
+                            }
+                        },
+
+                        year,
+                        manth,
+                        date
+                );
+                datePickerDialog.show();
+            }
+        });
+
+        birthday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final Calendar calendar = Calendar.getInstance();
+                int date = calendar.get(calendar.DAY_OF_MONTH);
+                int manth = calendar.get(calendar.MONTH);
+                int year = calendar.get(calendar.YEAR);
+
+                DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                                String s_day = String.valueOf(dayOfMonth);
+                                int i = month+1;
+                                String s_manth = String.valueOf(i);
+                                String s_year = String.valueOf(year);
+
+                                if (s_day.length()==1){
+                                    s_day="0"+s_day;
+                                }
+                                if (s_manth.length()==1){
+                                    s_manth = "0"+s_manth;
+                                }
+
+                                birthday.setText(s_day+"/"+s_manth+"/"+year);
+
+
+
+                            }
+                        },
+
+                        year,
+                        manth,
+                        date
+                );
+                datePickerDialog.show();
+
             }
         });
 
@@ -267,10 +389,16 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Enter Your  Valied Email Address", Toast.LENGTH_SHORT).show();
                     email.setError("Email");
                     email.requestFocus();
-                }else if (TextUtils.isEmpty(s_password)||num==1||lowe==1||cou==1||sim==1||upe==1){
+                }else if (TextUtils.isEmpty(s_password)||num==0||lowe==0||cou==0||sim==0||upe==0){
                     Toast.makeText(MainActivity.this, "Enter Strong Passwoed", Toast.LENGTH_SHORT).show();
                     password.setError("Password");
                     password.requestFocus();
+                    password.setBackgroundResource(R.drawable.error);
+                }else if(con_pass==0||!conpasswoed.contains(s_password)){
+                    Toast.makeText(MainActivity.this, "Passwoed Error", Toast.LENGTH_SHORT).show();
+                    con_password.setError("Continue Password");
+                    con_password.requestFocus();
+                    con_password.setBackgroundResource(R.drawable.error);
                 }else if (TextUtils.isEmpty(s_name)){
                     Toast.makeText(MainActivity.this, "Enter Your Nick Name", Toast.LENGTH_SHORT).show();
                     name.setError("Enter Nick Name");
@@ -304,18 +432,6 @@ public class MainActivity extends AppCompatActivity {
                     FirebaseRegister(s_email,s_password,s_name,s_address,s_phone,s_age,s_gender,s_birth,s_about);
 
                 }
-
-
-
-
-
-
-
-
-
-                    //
-
-
 
             }
 

@@ -11,6 +11,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/lagin_layout"
+        android:visibility="visible"
         >
 
 
@@ -73,9 +75,6 @@
                     android:layout_marginLeft="15dp"
                     android:hint="Type Your Email"
                     android:inputType="textEmailAddress"
-                    android:text="nafiz2755@gmail.com"
-
-
                     />
 
                 <TextView
@@ -111,7 +110,6 @@
                         android:layout_marginLeft="15dp"
                         android:hint="Type Your Password"
                         android:inputType="textPassword"
-                        android:text="s5S12#dd"
                         />
 
                     <ImageView
@@ -122,21 +120,10 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:paddingRight="10dp"
+
                         />
 
                 </RelativeLayout>
-
-
-
-
-
-
-
-
-
-
-
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -153,7 +140,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:gravity="center"
                     android:layout_marginTop="7dp"
                     >
@@ -162,7 +149,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="15dp"
                         android:textColor="#AB000000"
-                        android:text="read a "
+                        android:text="If you don't have an account, "
                         android:textStyle="normal"
                         android:fontFamily="@font/font1"
                         />
@@ -172,7 +159,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="15dp"
                         android:textColor="#2196F3"
-                        android:text="Registrationaccount"
+                        android:text=" please create one."
                         android:textStyle="normal"
                         android:fontFamily="@font/font1"
                         />
@@ -195,6 +182,8 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="25dp"
                     android:fontFamily="@font/font1"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
                     />
 
 

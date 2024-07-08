@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/refresh_profile"
+        android:icon="@drawable/change_pro"
+        android:title="Update Profile"/>
+
+    <item
+        android:id="@+id/updatepro"
+        android:icon="@drawable/change_pro"
+        android:title="Update Profile"/>
+
+    <item
+        android:id="@+id/change_email"
+        android:icon="@drawable/change_email"
+        android:title="Change Email"/>
+
+    <item
+        android:id="@+id/changepass"
+        android:icon="@drawable/change_pass"
+        android:title="Change Password"/>
+
+    <item
+        android:id="@+id/deleteProfile"
+        android:icon="@drawable/deletet_usure"
+        android:title="Delete Profile"/>
+
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/logout"
+        android:title="Log Out"/>
+
+
+
+</menu>
